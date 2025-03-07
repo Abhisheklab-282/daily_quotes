@@ -63,12 +63,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   // SignUp Button
                   SizedBox(
                     width: double.infinity,
-                    height: 50,
+                    height: 40,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent,
+                        backgroundColor: Color(0xFF9467C1),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(40),
                         ),
                       ),
                       onPressed: () {
@@ -160,3 +160,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
+
+
+
