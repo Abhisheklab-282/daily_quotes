@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../login/loginscreen.dart';
+
 class SignUpScreen extends StatefulWidget {
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -22,7 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       children: [
         Container(
           width: double.infinity,
-          height: 620,
+          height: 630,
           decoration: BoxDecoration(
               image: DecorationImage(
             image: AssetImage("assets/images/img1.png"),
@@ -44,21 +46,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
                   // Name area
                   buildTextField(
                       "Full Name", Icons.person, _nameController, false),
-                  SizedBox(height: 15),
+                  SizedBox(height: 10),
 
                   //   email area
                   buildTextField("Email", Icons.email, _emailController, false),
-                  SizedBox(height: 15),
+                  SizedBox(height: 10),
 
                   // Password area
                   buildTextField(
                       "Password", Icons.lock, _passwordController, true),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
                   // SignUp Button
                   SizedBox(
@@ -94,6 +96,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           style: TextStyle(color: Colors.white)),
                       GestureDetector(
                         onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()),
+                          );
                           // Navigate to Login Screen
                         },
                         child: Text(
@@ -123,18 +130,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
       style: TextStyle(color: Colors.black),
       decoration: InputDecoration(
         labelText: label,
-        floatingLabelBehavior: FloatingLabelBehavior.never ,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
         labelStyle: TextStyle(color: Colors.grey),
         prefixIcon: Icon(icon, color: Colors.black),
         suffixIcon: isPassword
             ? IconButton(
                 icon: Icon(
                     _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: Colors.black),
+                    color: Colors.grey),
                 onPressed: () {
                   setState(() {
                     _obscureText = !_obscureText;
-
                   });
                 },
               )
@@ -142,7 +148,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         filled: true,
         fillColor: Colors.white.withValues(),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(30),
           borderSide: BorderSide.none,
         ),
       ),
@@ -160,6 +166,3 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
-
-
-

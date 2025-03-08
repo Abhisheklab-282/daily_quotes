@@ -59,6 +59,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                         ),
+
+
+
+                        // SignUp Button
+
                         child: Text(
                           'Sing Up',
                           style: TextStyle(
