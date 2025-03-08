@@ -1,4 +1,8 @@
+import 'package:daily_qoutes/data/auth/auth.dart';
+import 'package:daily_qoutes/screen/quote/quotes screen.dart';
+import 'package:daily_qoutes/screen/signup/signupscreen.dart';
 import 'package:daily_qoutes/widgets/ui/uihelper.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -9,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final Auth _auth = Auth();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -34,11 +39,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   UiHelper.customTextField(text: "Login", height: 28,fontWeight: FontWeight.bold,color: Color(0XFFFFFFFF)),
                   SizedBox(height: 30,),
-                  UiHelper.customTextFieldContainer(hintText: "Email", controller: emailController),
+                  UiHelper.customTextFieldContainer(labelText: "Email", controller: emailController),
                   SizedBox(height: 25,),
-                  UiHelper.customTextFieldContainer(hintText: "password", controller:passwordController),
+                  UiHelper.customTextFieldContainer(labelText: "Password", controller:passwordController),
                   SizedBox(height: 40,),
-                  UiHelper.customButton(callback: (){}, buttonName: "Login"),
+                  UiHelper.customButton(callback: _logIn, buttonName: "Login"),
                   SizedBox(height: 20,),
                   UiHelper.customTextField(text: "forgot your password?", height: 16,color: Color(0XFFFFFFFF)),
                   SizedBox(height: 80,),
@@ -59,11 +64,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                         ),
-                        child: Text(
-                          'Sing Up',
-                          style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.blue,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                          },
+                          child: Text(
+                            'Sing Up',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
+                            ),
                           ),
                         ),
                       )
@@ -82,4 +93,19 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
   }
+  _logIn() async{
+    String email = emailController.text.trim();
+    String password = passwordController.text.trim();
+
+    User? user = await _auth.logInWithEmailAndPassword(email, password);
+    if(user != null ){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>QuotesScreen()));
+    }else{
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Sign Up Failed!")),
+      );
+    }
+
+  }
+
 }
