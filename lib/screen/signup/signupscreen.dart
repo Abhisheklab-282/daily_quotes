@@ -1,3 +1,4 @@
+import 'package:daily_qoutes/screen/profile%20screen/profilescreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -74,10 +75,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {
+                        String name = _nameController.text;
+                        String email = _emailController.text;
+
+                        if (_formKey.currentState!.validate() && name.isNotEmpty && email.isNotEmpty) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text("Sign Up Successful!")),
                           );
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfileScreen(name: name, email: email),
+                        ),); 
                         }
                       },
                       child: Text(
@@ -162,7 +170,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
           return "Password must be at least 6 characters";
         }
         return null;
+
+
       },
+
     );
+
+
   }
+  
 }

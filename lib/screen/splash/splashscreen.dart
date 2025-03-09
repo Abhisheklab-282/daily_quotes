@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:daily_qoutes/screen/login/loginscreen.dart';
+
 import 'package:daily_qoutes/screen/signup/signupscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

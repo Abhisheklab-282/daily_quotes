@@ -1,3 +1,4 @@
+import 'package:daily_qoutes/screen/profile%20screen/profilescreen.dart';
 import 'package:daily_qoutes/screen/signup/signupscreen.dart';
 import 'package:daily_qoutes/screen/splash/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: ProfileScreen(name: AutofillHints.name, email: AutofillHints.email)
     );
   }
 }
