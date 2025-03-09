@@ -22,12 +22,37 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
  final List<Map<String, dynamic>> tabsScreen = [
-   {"title": "All"},
-   {"title": "Love"},
-   {"title": "Life"},
-   {"title": "Motivational"},
-   {"title": "Success"},
-   {"title": "Funny"},
+   {"key": "assets/quotes/quotes_list.json",
+   "dataKey": "data",
+   "title": "author",
+   "description": "quote"
+   },
+   {"key": "assets/quotes/love_quotes.json",
+   "dataKey": "love",
+   "title": "author",
+   "description": "quote"
+   },
+   {"key": "assets/quotes/Life_Quotes.json",
+     "dataKey": "life",
+     "title": "author",
+     "description": "quote"
+   },
+   {"key": "assets/quotes/motivational_quotes.json",
+     "dataKey": "motivational",
+     "title": "author",
+     "description": "quote"
+   },
+   {"key": "assets/quotes/success_quotes.json",
+     "dataKey": "data",
+     "title": "author",
+     "description": "quote"
+   },
+   {"key": "assets/quotes/funny_quotes.json",
+     "dataKey": "funny",
+     "title": "author",
+     "description": "quote"
+   },
+
   
  ];
   @override
@@ -89,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         ),
         body:TabBarView(children: tabsScreen.map((tabsScreen){
-          return SampleScreen();
+          return SampleScreen(keyPath: tabsScreen["key"],title: tabsScreen["title"],description: tabsScreen["description"],dataKey: tabsScreen["dataKey"],);
         }).toList())
       )
     );
