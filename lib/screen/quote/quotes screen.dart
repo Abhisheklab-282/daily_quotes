@@ -1,5 +1,5 @@
 
-import 'package:daily_qoutes/screen/quote/bottamtapscreen/home%20screen.dart';
+  import 'package:daily_qoutes/screen/quote/bottamtapscreen/home%20screen.dart';
 import 'package:daily_qoutes/screen/quote/bottamtapscreen/profile%20screen.dart';
 
 import 'package:flutter/material.dart';
@@ -39,6 +39,7 @@ class _QuotesScreenState extends State<QuotesScreen> {
             ),
           ],
           borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+
         ),
         child: BottomNavigationBar(
           backgroundColor: Colors.transparent,

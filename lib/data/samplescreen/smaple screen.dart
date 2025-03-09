@@ -67,7 +67,7 @@ class _SampleScreenState extends State<SampleScreen> {
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: "playfair",
-                            fontSize: 15),
+                            fontSize: 14),
                       ),
                     )
                   ],
@@ -84,7 +84,7 @@ class _SampleScreenState extends State<SampleScreen> {
     crossAxisCount: 2,
     crossAxisSpacing: 5,
     mainAxisSpacing: 5,
-    childAspectRatio: 0.85,
+    childAspectRatio: 0.75,
   );
 
   @override

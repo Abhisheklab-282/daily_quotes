@@ -64,9 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
           preferredSize: Size.fromHeight(190),
           child: Column(
             children: [
-              QuoteAppBar(),
+              QuoteAppBar( title: "Daily Quotes"),
               Padding(
-                padding: const EdgeInsets.only(right: 220, top: 10),
+                padding: const EdgeInsets.only(right: 200, top: 10),
                 child: Text(
                   "Explore",
                   style: TextStyle(
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 5,
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 70),
+                padding: const EdgeInsets.only(right: 50),
                 child: Text(
                   "Awesome quotes from all over the world",
                   style: TextStyle(
@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 labelPadding: EdgeInsets.symmetric(horizontal: 3),
                 isScrollable: true,
                 tabs: tabsTitle.map( (tabsTitle)=> Container(
-                  width: 90,
+                  width: 80,
                     height: 30,
                     decoration: BoxDecoration(
                       color: Colors.black,
