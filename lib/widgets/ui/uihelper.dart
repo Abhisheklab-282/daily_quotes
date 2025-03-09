@@ -84,4 +84,13 @@ class UiHelper {
     );
   }
 
+  static sizeScreenWidth(BuildContext context){
+    return MediaQuery.of(context).size.width;
+  }
+  static sizeScreenHeight(BuildContext context){
+    return MediaQuery.of(context).size.height;
+  }
+
+
+
 }

@@ -22,6 +22,7 @@ class SampleScreen extends StatefulWidget {
 
 class _SampleScreenState extends State<SampleScreen> {
   Map<String, dynamic>? data;
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -37,40 +38,45 @@ class _SampleScreenState extends State<SampleScreen> {
           final item = data?[dataKey][index];
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Card(
-              elevation: 10,
-              shadowColor: Colors.grey.shade600,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-
-                  color: Colors.black
-
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                        child: Text(
-                          item[title].toString(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
+            child: GestureDetector(
+              onTap: (){
+                _onItemTapped(context,item[title],item[description]);
+              },
+              child: Card(
+                elevation: 18,
+                shadowColor: Colors.grey.shade700,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                
+                    color: Colors.black
+                
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Text(
+                            item[title].toString(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, color: Colors.white),
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        item[description].toString(),
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "playfair",
-                            fontSize: 15),
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text(
+                          item[description].toString(),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: "playfair",
+                              fontSize: 14),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -84,13 +90,15 @@ class _SampleScreenState extends State<SampleScreen> {
     crossAxisCount: 2,
     crossAxisSpacing: 5,
     mainAxisSpacing: 5,
-    childAspectRatio: 0.85,
+    childAspectRatio: 0.75,
+
   );
 
   @override
   void initState() {
     super.initState();
     _loadQuotes();
+
   }
 
   void _loadQuotes() async {
@@ -105,5 +113,48 @@ class _SampleScreenState extends State<SampleScreen> {
     } else {
       print("Error");
     }
+  }
+  
+  
+  _onItemTapped(BuildContext context,String item1,String item2) {
+    return showDialog(context: context, builder: (context){
+      return AlertDialog(
+        elevation: 10,
+        shadowColor: Colors.grey.shade700,
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: Colors.black,width: 2),
+          borderRadius: BorderRadius.circular(15)
+        ),content: SizedBox(
+        height: 300,
+        width: 200,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 180),
+              child: IconButton(onPressed: (){}, icon: Icon(Icons.star,size: 25,color: Colors.black54,)),
+            ),
+            Text('"$item1"',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,fontFamily: "Rubik-Bold.ttf"),),
+            Text(item2,style: TextStyle(fontSize: 20,fontFamily: "playfair"),),
+            Row(
+              children: [
+                IconButton(onPressed: (){}, icon: Icon(Icons.bookmark,size: 20,color: Colors.black54,)),
+                IconButton(onPressed: (){}, icon: Icon(Icons.share,size: 20,color: Colors.black54,)),
+              ],
+            )
+
+
+
+          ],
+        )
+
+      ),
+
+      );
+
+    });
+
+
   }
 }
