@@ -1,0 +1,59 @@
+{
+    "quotes": [
+        {
+            "title": "Motivation",
+            "description": "The way to get started is to quit talking and begin doing.",
+            "photo_url": "https://example.com/motivation1.jpg"
+        },
+        {
+            "title": "Motivation",
+            "description": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+            "photo_url": "https://example.com/motivation2.jpg"
+        },
+        {
+            "title": "Motivation",
+            "description": "Your limitation\u2014it\u2019s only your imagination.",
+            "photo_url": "https://example.com/motivation3.jpg"
+        },
+        {
+            "title": "Life",
+            "description": "Life is what happens when you\u2019re busy making other plans.",
+            "photo_url": "https://example.com/life1.jpg"
+        },
+        {
+            "title": "Life",
+            "description": "You only live once, but if you do it right, once is enough.",
+            "photo_url": "https://example.com/life2.jpg"
+        },
+        {
+            "title": "Success",
+            "description": "Don\u2019t be afraid to give up the good to go for the great.",
+            "photo_url": "https://example.com/success1.jpg"
+        },
+        {
+            "title": "Success",
+            "description": "I find that the harder I work, the more luck I seem to have.",
+            "photo_url": "https://example.com/success2.jpg"
+        },
+        {
+            "title": "Happiness",
+            "description": "Happiness depends upon ourselves.",
+            "photo_url": "https://example.com/happiness1.jpg"
+        },
+        {
+            "title": "Happiness",
+            "description": "The purpose of our lives is to be happy.",
+            "photo_url": "https://example.com/happiness2.jpg"
+        },
+        {
+            "title": "Love",
+            "description": "Love all, trust a few, do wrong to none.",
+            "photo_url": "https://example.com/love1.jpg"
+        },
+        {
+            "title": "Love",
+            "description": "The greatest happiness of life is the conviction that we are loved.",
+            "photo_url": "https://example.com/love2.jpg"
+        }
+    ]
+}

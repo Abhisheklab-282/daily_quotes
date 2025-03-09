@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1049538324006",
+    "project_id": "daily-quotes-80a19",
+    "storage_bucket": "daily-quotes-80a19.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049538324006:android:08be5ff60b98473f1f68e7",
+        "android_client_info": {
+          "package_name": "com.example.daily_qoutes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXxf7xJ2iPWL4y-XUnK9qxhv0ZV5l9HMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

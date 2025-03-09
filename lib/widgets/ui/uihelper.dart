@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class UiHelper {
 
-  static customTextFieldContainer({required String hintText,required TextEditingController controller}){
+  static customTextFieldContainer({required String labelText,required TextEditingController controller}){
     return SizedBox(
       width: 310,
       height: 55,
@@ -15,9 +15,14 @@ class UiHelper {
         child: TextField(
           controller: controller,
           decoration: InputDecoration(
+              floatingLabelBehavior: FloatingLabelBehavior.never ,
             fillColor: Color(0XFFFFFFFF),
             filled: true,
-            hintText: hintText,
+            labelText: labelText,
+            labelStyle: TextStyle(
+              color: Colors.grey,
+
+            ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
               borderSide: BorderSide.none,
