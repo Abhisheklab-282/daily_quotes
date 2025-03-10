@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.example.daily_qoutes"
-    compileSdkVersion 34
+    compileSdkVersion = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

@@ -67,21 +67,21 @@ class UiHelper {
     ),);
 
   }
-  static customButton({required VoidCallback callback , required String buttonName}){
+  static customButton({required VoidCallback callback , required String buttonName, required Color? color,required double height,required double width,}){
     return SizedBox(
-      height: 44,
-      width:320,
+      height: height,
+      width: width,
       child: ElevatedButton(onPressed: (){
         callback();
       }, style: ElevatedButton.styleFrom(
         elevation: 10,
-          backgroundColor: Color(0XFF9467C1),
+          backgroundColor: Color(0XFFEC9FE9),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
           )
 
       ),
-          child: Text(buttonName,style: TextStyle(fontSize:16 ,color: Color(0XFFFFFFFF)),)),
+          child: Text(buttonName,style: TextStyle(fontSize:16 ,color: color),)),
 
     );
   }

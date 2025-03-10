@@ -1,16 +1,25 @@
+import 'dart:io';
+
 import 'package:daily_qoutes/widgets/ui/uihelper.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/quoteappbar/quoteappbar.dart';
+import '../../onboarding/onboardingscreen.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  final File? pickedImage;
+
+  const ProfileScreen({super.key, this.pickedImage});
+
+
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +40,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Stack(children: [
                 CircleAvatar(
                   radius: 60,
-                  backgroundImage: AssetImage("assets/images/dwn.png"),
-                  backgroundColor: Colors.grey,
+                  backgroundImage: pickedImage != null ? FileImage(pickedImage!) : AssetImage("assets/images/dwn.png") as ImageProvider,
+                  backgroundColor: Colors.red,
                 ),
                 Positioned(
                   bottom: 10,
@@ -40,6 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: CircleAvatar(
                       radius: 20,
                       backgroundColor: Colors.grey.shade400,
+
                       child: IconButton(
                         onPressed: () {},
                         icon: Icon(Icons.add_a_photo,
@@ -93,19 +103,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: Text("Saved Quotes"),
                   ),
                   SizedBox(height: 50),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 20,
-                      backgroundColor: Colors.black,
-                    ),
-                    child: Text(
-                      "Logout",
-                      style: TextStyle(
-                        color: Color(0XFFEC9FE9),
-                      ),
-                    ),
-                  ),
+                  UiHelper.customButton(callback:(){} , buttonName: "Logout", color: Colors.black, height: 40, width: 150),
+
                 ],
               ),
             ),
@@ -113,5 +112,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
     );
+  }
+
+  pickedImgForProfile(File pickedImage){
+    return CircleAvatar(
+      radius: 60,
+      backgroundImage: FileImage(pickedImage),
+      backgroundColor: Colors.grey,
+    );
+
   }
 }

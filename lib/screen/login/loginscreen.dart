@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 25,),
                   UiHelper.customTextFieldContainer(labelText: "Password", controller:passwordController),
                   SizedBox(height: 40,),
-                  UiHelper.customButton(callback: _logIn, buttonName: "Login"),
+                  UiHelper.customButton(callback: _logIn, buttonName: "Login", color: Colors.black, height: 40, width: 300),
                   SizedBox(height: 20,),
                   UiHelper.customTextField(text: "forgot your password?", height: 16,color: Color(0XFFFFFFFF)),
                   SizedBox(height: 80,),
