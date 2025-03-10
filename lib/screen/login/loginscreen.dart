@@ -1,4 +1,5 @@
 import 'package:daily_qoutes/data/auth/auth.dart';
+import 'package:daily_qoutes/screen/onboarding/onboardingscreen.dart';
 import 'package:daily_qoutes/screen/quote/quotes screen.dart';
 import 'package:daily_qoutes/screen/signup/signupscreen.dart';
 import 'package:daily_qoutes/widgets/ui/uihelper.dart';
@@ -99,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     User? user = await _auth.logInWithEmailAndPassword(email, password);
     if(user != null ){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>QuotesScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen()));
     }else{
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Sign Up Failed!")),

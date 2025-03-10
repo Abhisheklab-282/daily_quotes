@@ -15,7 +15,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(90),
         child: Column(
@@ -24,9 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ],
         ),
       ),
-      body:
-
-      Column(
+      body: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -47,26 +44,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         onPressed: () {},
                         icon: Icon(Icons.add_a_photo,
                             size: 20, color: Colors.black),
-
                       )),
                 )
               ])
             ],
           ),
-         SizedBox(height: 5),
-         UiHelper.customTextField(text: "Gourav", height: 20, fontWeight: FontWeight.bold),
+          SizedBox(height: 5),
+          UiHelper.customTextField(
+              text: "Gourav", height: 20, fontWeight: FontWeight.bold),
           SizedBox(height: 2),
-          UiHelper.customTextField(text: "nagwangourav@gmail.com", height: 15, fontWeight: FontWeight.w400),
+          UiHelper.customTextField(
+              text: "nagwangourav@gmail.com",
+              height: 15,
+              fontWeight: FontWeight.w400),
           SizedBox(height: 10),
           Divider(thickness: 2),
           Card(
-
             color: Colors.white,
             elevation: 10,
             margin: EdgeInsets.all(10),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
-
             ),
             child: Container(
               width: 400,
@@ -74,34 +72,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Column(
                 children: [
                   ListTile(
-                    leading: Icon(Icons.notifications,color: Colors.blueAccent),
+                    leading:
+                        Icon(Icons.notifications, color: Colors.blueAccent),
                     title: Text("Notification"),
-            ),SizedBox(height: 10),
+                  ),
+                  SizedBox(height: 10),
                   ListTile(
-                    leading: Icon(Icons.favorite,color: Colors.red,),
+                    leading: Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    ),
                     title: Text("Favorite Quotes"),
-                  ),SizedBox(height: 10),
+                  ),
+                  SizedBox(height: 10),
                   ListTile(
-                    leading: Icon(Icons.bookmark,color: Colors.black,),
+                    leading: Icon(
+                      Icons.bookmark,
+                      color: Colors.black,
+                    ),
                     title: Text("Saved Quotes"),
-                  ),SizedBox(height: 50),
-                  ElevatedButton(onPressed: (){},
-                      style: ElevatedButton.styleFrom(
-                        elevation: 20,
-                        backgroundColor: Colors.black,
+                  ),
+                  SizedBox(height: 50),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      elevation: 20,
+                      backgroundColor: Colors.black,
+                    ),
+                    child: Text(
+                      "Logout",
+                      style: TextStyle(
+                        color: Color(0XFFEC9FE9),
                       ),
-                          child: Text("Logout",style: TextStyle(color: Color(0XFFEC9FE9),),),),
-
-
-
-
-
-    ],),),),
-    ],
-
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
-
-
     );
   }
 }
