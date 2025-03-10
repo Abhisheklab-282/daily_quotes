@@ -69,8 +69,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             ),
             child: Container(
-              width: 400,
-              height: 370,
+              width: 350,
+              height: 340,
               child: Column(
                 children: [
                   ListTile(

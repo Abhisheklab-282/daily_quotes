@@ -165,17 +165,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             borderSide: BorderSide.none,
           ),
         ),
-        // validator: (value) {
-        //   if (value == null || value.isEmpty) {
-        //     return "Please enter your $label";
-        //   } else if (label == "Email" &&
-        //       !RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-        //     return "Enter a valid email";
-        //   } else if (label == "Password" && value.length < 6) {
-        //     return "Password must be at least 6 characters";
-        //   }
-        //   return null;
-        // },
+
       ),
     );
   }
@@ -187,13 +177,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
     String confirmPassword = _confirmPasswordController.text.toString();
 
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
-    if(user != null && password==confirmPassword){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
-    }else{
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Sign Up Failed!")),
-      );
-    }
+
+      if (user != null && password == confirmPassword) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Sign Up Failed!")),
+        );
+      }
+
 
   }
 
