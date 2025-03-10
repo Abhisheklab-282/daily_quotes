@@ -1,6 +1,7 @@
 import 'dart:async';
 
 
+import 'package:daily_qoutes/screen/login/loginscreen.dart';
 import 'package:daily_qoutes/screen/signup/signupscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 4),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
     });
 
   }

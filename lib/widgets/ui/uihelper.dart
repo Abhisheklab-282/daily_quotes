@@ -57,11 +57,13 @@ class UiHelper {
         ));
 
   }
-  static customTextField({required String text,required double height,Color? color,FontWeight? fontWeight}){
+  static customTextField({required String text,required double height,Color? color,FontWeight? fontWeight }){
     return Text(text,style: TextStyle(
         fontSize:height,
         color:color??Colors.black,
         fontWeight: fontWeight
+
+
     ),);
 
   }
